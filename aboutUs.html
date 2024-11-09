@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]> <html lang="en" class="ie10 ie9 ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie10 ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="fa">
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="2353931" >
+        <member type="view" name="Introduction" preview="" />
+    </basis>
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="2353933" >
+        <member type="view" name="about" preview="" />
+    </basis>
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="2353936" >
+        <member type="view" name="mission" preview="" />
+    </basis>
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="2353937" >
+        <member type="view" name="companygroup" preview="" postsql="select * from [db.companygroup] where prpID in (7246)" />
+    </basis>
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="2353938" >
+        <member type="view" name="history" preview="" />
+    </basis>
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="2353939" >
+        <member type="view" name="vision" preview="" />
+    </basis>
+  
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="2353942" >
+        <member type="view" name="statistics" preview="" />
+    </basis>
+    <basis core="dbsource" source="media" name="db" lid="1" sourcemid="article" usedforid="2353940" >
+        <member type="list" name="logo"  preview="" />
+    </basis>
+    <basis core="dbsource" source="media" name="db" lid="1" sourcemid="article" usedforid="2353943" >
+        <member type="list" name="awards"  preview="" />
+    </basis>
+    <basis core="dbsource" source="media" name="db" lid="1" sourcemid="article" usedforid="2353944" >
+        <member type="list" name="certificate"  preview="" />
+    </basis>
+    <basis core="dbsource" source="media" name="db" lid="1" sourcemid="article" usedforid="2353945" >
+        <member type="list" name="partners"  preview="" />
+    </basis>
+    <basis core="dbsource" source="media" name="db" lid="1" sourcemid="article" usedforid="2353937" >
+        <member type="list" name="companygroupGallery"  preview="" />
+    </basis>
+    <basis core="dbsource" source="media" name="db" lid="1" sourcemid="article" usedforid="2353933" >
+        <member type="list" name="about_gallery"  preview="" />
+    </basis>
+    <basis core="dbsource" source="basiscore" name="db" lid="11"  >
+        <member type="list" name="teams" size="320x400"  preview="" />
+    </basis> 
+    <basis core="dbsource" source="basiscore" name="db" lid="1" mid="5" usedforid="9585" >
+        <member request="json-ld" type="scalar" name="json"  />
+    </basis>
+
+        <basis core="inlinesource" name="db">
+         <member 
+         name="companygroupGalleryJoin" 
+         lefttblcol="db.companygroup.RowNumber" 
+         righttblcol="db.companygroupGallery.RowNumber" 
+         format="join" 
+         jointype="leftjoin" preview="\" />
+        </basis>
+<head>    
+    <title>درباره ما</title>   
+    <meta name="description" content="">  
+    <basis core="call" file="styles_mobile.inc" />
+
+ 
+</head>
+
+<body class="default-page about_mobile">
+ 
+    <div class=" ccm-page">
+
+     <basis core="call" file="header_mobile.inc" />
+       
+        <main>
+           
+            <div class="list-page work-page">
+
+                <div class=" full">
+                    <div class="">
+            <div class="about_wrapper">
+            
+                <div class="about part1">
+                    <div>
+                        <img src="[##cms.cms.cdn##]/images/about.png" alt="" />  
+                      </div>
+                  <div>
+                    <basis core="print" datamembername="db.Introduction">
+                        <face filter="prpID = 7226">
+                            <h1>
+                                @text
+                                </h1>
+                        </face>
+                     </basis>
+                     <basis core="print" datamembername="db.Introduction">
+                        <face filter="prpID = 7227">
+                                @largetext
+                        </face>
+                     </basis>
+                  </div>
+                 
+                </div>
+
+                <div class="about part2">
+                    <div class="about_title">
+                        <img src="[##cms.cms.cdn##]/images/end logo.png" alt="ماموریت ثنانور" />
+                        ماموریت ثنانور
+                    </div>
+                    <div class="about_slogan">
+                        <span>
+                            <basis core="print" datamembername="db.mission">
+                                <face filter="prpid = 7227">
+                                    @largetext
+                                </face>
+                            </basis>
+                        
+    </span>
+                        <span class="quote" style="right: 30px;">“</span>
+                      
+ <span class="quote" style="left: 30px;">“</span>
+                    </div>
+                  </div>
+                  <div class="about part3">
+                    <div class="about_title">
+                        <img src="[##cms.cms.cdn##]/images/end logo.png" alt="گـروه شرکتهـای ثـنـانـور" />
+                        گـروه شرکتهـای ثـنـانـور
+                    </div>
+                    <div class="splide groupSlider" role="group" style="position: relative;z-index: 9999;">
+                        <div class="splide__track">
+                              <ul class="splide__list">
+                                <basis core="print" datamembername="db.companygroupGalleryJoin">
+                                    <face>
+                                        <li class="splide__slide">
+                                            <img src="[##cms.cms.cdn##]/@db.companygroupGallery.largeIMG" alt="@db.companygroupGallery.name" width="225" height="225" />
+                                            <p>@db.companygroup.text</p>
+                                            <div>
+                                                @db.companygroup.largetext
+                                            </div>
+                                          
+                                           
+                                          </li>
+                                    </face>
+                                    </basis>
+
+                               
+                              </ul>
+                        </div>
+                        
+                    
+                    </div>
+
+
+                    <div class="clr"></div>
+                  </div>
+                  <div class="clr"></div>
+                  <div class="about part4">
+                    <div class="about_title">
+                        <img src="[##cms.cms.cdn##]/images/end logo.png" alt="تاریخچه" />
+                        تاریخچه
+                    </div>
+                    <div class="text">
+                        <basis core="print" datamembername="db.history">
+                            <face filter="prpID = 7227">
+                                    @largetext
+                            </face>
+                         </basis>
+                    </div>
+                    <img src="[##cms.cms.cdn##]/images/part4-mobile.jpg" class="part4_img" alt="" />
+                    </div>
+                    <div class="clr"></div>
+                    <div class="about part5">
+                        
+                        <div>
+                            <div class="part5_title">
+                                <img src="[##cms.cms.cdn##]/images/end logo.png" alt="تاریخچه" />
+                                چشم انداز </div>
+                                <basis core="print" datamembername="db.vision">
+                                    <face filter="prpID = 7227">
+                                            @largetext
+                                    </face>
+                                 </basis>
+                        </div>
+                      
+                        </div>
+                        
+                      
+            </div>
+            <basis core="print" datamembername="db.teams">
+                <layout>
+                    <div class="about part6">
+                        <div class="about_title">
+                          
+                            اعضای تیم ثنانور
+                        </div>
+                        </div>
+                    <div class="colleages">
+
+                        <div class="splide colleages_splide" role="group" style="position: relative;z-index: 9999;">
+                               <div class="splide__track">
+                                     <ul class="splide__list">
+                                      @child
+                                        
+                                     </ul>
+                               </div>
+                           </div>
+           
+           
+           
+                       </div>
+                </layout>
+                <face>
+                    <li class="splide__slide">
+                        <img src="[##cms.cms.cdn##]/00320X00400prp" width="172" height="214" alt="@title" />
+                    </li>
+                </face>
+                </basis>
+           
+
+
+
+                <basis core="print" datamembername="db.logo">
+                    <layout>
+                        <div class="logo_wrapper_about">
+                            <div class="logo_title">
+                                لوگوی پروژه های ثنانور
+                            </div>
+                            <div class="logo_body">
+                                <div class="splide logos_splide" role="group" style="position: relative;z-index: 9999;">
+                                    <div class="splide__track">
+                                          <ul class="splide__list">
+                                          @child
+                                             
+                                          </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </layout>
+                    <face>
+                        <li class="splide__slide">
+                            <div>
+                                <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
+                            </div>
+                        </li>
+                    </face>
+                </basis>
+          
+            <div class="clr"></div>
+          
+            <div class="about_wrapper">
+                <div class="about part7">
+                    <div class="about_title">
+                   
+                        جوایز 
+                    </div>
+                    <div>
+                        <div id="awardslider_gallery">
+                            <div class="splide awardslider" role="group" style="position: relative;z-index: 9999;">
+                                <div class="splide__track">
+                                      <ul class="splide__list">
+                                        <basis core="print" datamembername="db.awards">
+                                            <face>
+                                                <li class="splide__slide">
+                                                    <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
+                                                  </li>
+                                            </face>
+                                        </basis>
+                                        
+                                       
+                                      </ul>
+                                </div>
+                                
+                                <div class="about_button_wrapper">
+                                    <div>
+                                    <div class="splide__arrows">
+                                        
+                                        <button class="splide__arrow splide__arrow--next" >
+                                            <svg width="22" height="39" viewBox="0 0 22 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.5 1L2 19.5L20.5 38" stroke="white" stroke-width="2"/>
+                                                </svg>
+                                                
+                                                
+                                        </button>
+                                        
+                                        <div class="my-carousel-progress">
+                                            <div class="my-carousel-progress-bar"></div>
+                                          </div>
+                                          <div class="awardslide_number">
+                                            <span class="awardslide_number1">1</span>
+                                            -
+                                            <span class="awardslide_number2">2</span>
+                                        </div>
+                                    
+                                        <button class="splide__arrow splide__arrow--prev">
+                                            <svg width="22" height="39" viewBox="0 0 22 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.5 1L2 19.5L20.5 38" stroke="white" stroke-width="2"/>
+                                                </svg>
+                                                
+                                        </button>
+                                  </div>
+                                  
+                                </div>
+                               
+                                    </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="about part8">
+                        <div class="about_title">
+                            
+                            تقدیرنامه ها 
+                        </div>
+                        <div>
+                            <div id="awardslider_gallery" class="certificateslider_gallery">
+
+                                
+                            <div class="splide certificateslider" role="group" style="position: relative;z-index: 9999;">
+                                <div class="splide__track">
+                                      <ul class="splide__list">
+                                        <basis core="print" datamembername="db.certificate">
+                                            <face>
+                                                <li class="splide__slide">
+                                                    <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
+                                                  </li>
+                                            </face>
+                                        </basis>
+
+                                       
+                                       
+                                      </ul>
+                                </div>
+                                
+                                <div class="about_button_wrapper">
+                                    <div>
+                                    <div class="splide__arrows">
+                                        
+                                        <button class="splide__arrow splide__arrow--next" >
+                                            <svg width="22" height="39" viewBox="0 0 22 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.5 1L2 19.5L20.5 38" stroke="white" stroke-width="2"/>
+                                                </svg>
+                                                
+                                                
+                                        </button>
+                                        
+                                        <div class="my-carousel-progress">
+                                            <div class="my-carousel-progress-bar"></div>
+                                          </div>
+                                          <div class="awardslide_number">
+                                            <span class="awardslide_number1">1</span>
+                                            -
+                                            <span class="awardslide_number2">2</span>
+                                        </div>
+                                    
+                                        <button class="splide__arrow splide__arrow--prev">
+                                            <svg width="22" height="39" viewBox="0 0 22 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.5 1L2 19.5L20.5 38" stroke="white" stroke-width="2"/>
+                                                </svg>
+                                                
+                                        </button>
+                                  </div>
+                                  
+                                </div>
+                               
+                                    </div>
+                            </div>
+
+                            </div>
+                        </div>
+                        </div>
+                        <div class="clr"></div>
+                  
+
+
+            </div>
+            <basis core="print" datatmembername="db.partners">
+                <layout>
+                    <div class="about part9">
+                        <div class="statistics_title">شرکای تجاری</div>
+                        <div class="about_partners">
+                            <div class="splide partnerslider" role="group" style="position: relative;z-index: 9999;">
+                                <div class="splide__track">
+                                      <ul class="splide__list">
+                                    @child
+                                       
+                                       
+                                      </ul>
+                                </div>
+                                
+                            
+                            </div>
+        
+                          
+                        </div>
+                        </div>
+                </layout>
+                <face>
+                    <li class="splide__slide">
+        
+                        <div class="partner">
+                            <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
+                          
+                        </div>
+                        <p>
+                            @name
+                        </p>
+                       
+                      </li>
+                </face>
+                </basis>
+          
+        </div>
+    </div>
+</div>
+            
+            </div>
+
+        
+        </main>
+        <div class="clr"></div>
+        <basis core="call" file="footer_mobile.inc" />
+    </div>
+    <basis core="call" file="scripts_mobile.inc" />
+    <script>
+        const colleages_splideWrpper = document.querySelector(".colleages_splide")
+        if(colleages_splideWrpper){
+            var colleages_splide = new Splide( '.colleages_splide', {
+            type   : 'loop',
+            perPage: 5,
+            perMove: 1,
+            autoWidth: true,
+            drag   : 'free',
+            padding: 25,
+            arrows     : false,
+            pagination : false,
+        } );
+        colleages_splide.mount();
+        }
+       
+        var logos_splide = new Splide( '.logos_splide', {
+            type   : 'loop',
+            perPage: 5,
+            perMove: 1,
+            autoWidth: true,
+            drag   : 'free',
+            padding: 25,
+            arrows     : false,
+            pagination : false,
+        } );
+        logos_splide.mount();
+
+
+        const partnersliderWrapper = document.querySelector(".partnerslider")
+        if(partnersliderWrapper){
+            var partnerslider = new Splide( '.partnerslider', {
+                type   : 'loop',
+                perPage: 5,
+                perMove: 1,
+                autoWidth: true,
+                drag   : 'free',
+                arrows     : false,
+                pagination : false,
+                padding: '5rem',
+                autoplay: true,
+            } );
+            partnerslider.mount();
+        }
+       
+
+        var groupSlider=new Splide( '.groupSlider', {
+            
+            perPage: 1,
+            perMove: 1,
+            drag   : 'free',
+            arrows     : false,
+            padding: '1rem',
+            width:"100%"
+        } );
+        groupSlider.mount();
+        
+        var awardslider = new Splide( '.awardslider', {
+            type   : 'loop',
+            perPage: 2,
+            perMove: 1,
+            pagination : false,
+            drag   : 'free',
+            direction: 'rtl',
+            rewind : true,
+            
+            classes: {
+                    arrows: 'splide__arrows your-class-arrows',
+                    arrow : 'splide__arrow your-class-arrow',
+                    prev  : 'splide__arrow--prev your-class-prev',
+                    next  : 'splide__arrow--next your-class-next',
+            },
+        } );
+        var bar    = awardslider.root.querySelector( '.my-carousel-progress-bar' );
+        awardslider.on( 'mounted move', function () {
+            var end  = awardslider.Components.Controller.getEnd() + 1;
+            var rate = Math.min( ( awardslider.index + 1 ) / end, 1 );
+            const number = awardslider.root.querySelector(".awardslide_number")
+            number.querySelector(".awardslide_number1").textContent = awardslider.index + 1 
+            number.querySelector(".awardslide_number2").textContent = awardslider.Components.Controller.getEnd() + 1
+            bar.style.width = String( 100 * rate ) + '%';
+        } );
+        awardslider.mount();
+
+
+        var certificateslider = new Splide( '.certificateslider', {
+            type   : 'loop',
+            perPage: 2,
+            perMove: 1,
+            pagination : false,
+            drag   : 'free',
+            direction: 'rtl',
+            rewind : true,
+            classes: {
+                    arrows: 'splide__arrows your-class-arrows',
+                    arrow : 'splide__arrow your-class-arrow',
+                    prev  : 'splide__arrow--prev your-class-prev',
+                    next  : 'splide__arrow--next your-class-next',
+            },
+        } );
+        var bar    = certificateslider.root.querySelector( '.my-carousel-progress-bar' );
+        certificateslider.on( 'mounted move', function () {
+            var end  = certificateslider.Components.Controller.getEnd() + 1;
+            var rate = Math.min( ( certificateslider.index + 1 ) / end, 1 );
+            const number = certificateslider.root.querySelector(".awardslide_number")
+            number.querySelector(".awardslide_number1").textContent = certificateslider.index + 1 
+            number.querySelector(".awardslide_number2").textContent = certificateslider.Components.Controller.getEnd() + 1
+            bar.style.width = String( 100 * rate ) + '%';
+        } );
+        certificateslider.mount();      
+
+
+        let sIndex = 0
+        let infoSlides = document.querySelectorAll(`.slides .slide`)
+        infoSlides.forEach((slide) => {
+            slide.setAttribute('data-num', sIndex)
+            if (sIndex == 0)
+                slide.classList.add('active')
+
+            let li = document.createElement('li')
+            li.setAttribute('data-num', sIndex)
+            if (sIndex == 0)
+                li.classList.add('active')
+            let span = document.createElement('span')
+            span.textContent = `0${sIndex + 1
+                }/0${infoSlides.length
+                }`
+            li.append(span)
+           
+            sIndex++
+        })
+        function sliderAbout(e) {
+
+            let num = e.getAttribute('data-num')
+            document.querySelector(`.slides ul li.active`).classList.remove('active')
+            document.querySelector(`.slides ul li[data-num="${num}"]`).classList.add('active')
+            document.querySelector(`.slides .slide.active`).classList.remove('active')
+            document.querySelector(`.slides .slide[data-num="${num}"]`).classList.add('active')
+        }
+   
+    
+    </script>
+
+</body>
+
+</html>

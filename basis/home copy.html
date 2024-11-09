@@ -1,0 +1,168 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="19" catid="208610">
+    <member name="projectList" type="list" link="project.bc" />
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2355015">
+    <member name="def-content" type="list" format="4" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1"  catid="208399"  >
+    <member type="list" name="alist" link="article.bc" size="360x182" preview="" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="5" usedforid="9585">
+    <member name="contactus" type="view"/>
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صفحه نخست | ثنانور</title>
+    <meta name="description" content="صفحه نخست | ثنانور" />
+    <meta name="theme-color" content="#000000" />
+    <script type="56ca3c60b79413af1c7e0d31-text/javascript">
+      var CCM_DISPATCHER_FILENAME = "/index.php";
+      var CCM_CID = 1;
+      var CCM_EDIT_MODE = false;
+      var CCM_ARRANGE_MODE = false;
+      var CCM_IMAGE_PATH = "/concrete/images";
+      var CCM_TOOLS_PATH = "/index.php/tools/required";
+      var CCM_APPLICATION_URL = "https://wearebishopdesign.com";
+      var CCM_REL = "";
+    </script>
+
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/newMobileStyle.css" />
+    <basis core="call" file="styles_mobile.inc" />
+</head>
+
+<body>
+    <div class="homeMobile">
+        <basis core="call" file="newHeader-mobile.inc" />
+
+        <div class="section1">
+            <div class="inVideo">
+                <video playsinline loop muted autoplay>
+                    <source src="[##cms.cms.cdn##]/images/def-video.MP4" />
+                </video>
+            </div>
+        </div>
+        <div class="section2">
+            <div class="backLogo">
+                <div class="imgS">
+                    <img src="[##cms.cms.cdn##]/images/bacLogoImg-mobile.png" alt="" />
+                </div>
+            </div>
+            <div class="swiper homeFaci">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <basis core="print" datamembername="db.def-content">
+                        <face filter="ord=1000">
+                            <div class="swiper-slide">
+                                <div class="faciBox">
+                                    <div class="imgS">
+                                        <img src="/@largeIMG" alt="@name" title="@name" />
+                                    </div>
+                                    <div class="title">
+                                        <p>@description</p>
+                                        <span> @name</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </face>
+                    </basis>
+                </div>
+                <div class="nextFaci">
+                    <svg width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="19" height="25" fill="#CCA352" />
+                        <path opacity="0.5" d="M7 18L12.5 12.5L7 7" stroke="white" />
+                    </svg>
+                </div>
+                <div class="prevFaci">
+                    <svg width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="19" height="25" fill="#CCA352" />
+                        <path d="M11.5 18L6 12.5L11.5 7" stroke="white" />
+                    </svg>
+                </div>
+            </div>
+            <div class="swiper-pagination faciPaginag"></div>
+        </div>
+        <div class="section3">
+            <div class="title3">
+                <h1>خدمات ثنا نور</h1>
+                <a href="/خدمات" title="مشاهده ">مشاهده </a>
+            </div>
+            <div class="sliderSection">
+                <div class="backLogo">
+                    <img src="[##cms.cms.cdn##]/images/bacLogoImg-mobile.png" alt="sananoor" />
+                </div>
+                <div class="homeServicePagination"></div>
+                <div class="swiper homeService">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <basis core="print" datamembername="db.alist">
+                            <face filter="id<>2355010">
+                                <div class="swiper-slide">
+                                    <a href="/@link" title="@title">
+                                        <div class="imgS">
+                                            <img src="/@00360X00182prp" alt="@title" title="@title" />
+                                        </div>
+                                        <div class="des">
+                                            <p>@title</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </face>
+                        </basis>
+                    </div>
+                </div>
+                <div class="homeServiceNext">
+                    <svg width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="19" height="25" fill="#0E0E0E" />
+                        <path opacity="1" d="M7 18L12.5 12.5L7 7" stroke="white" />
+                    </svg>
+                </div>
+                <div class="homeServicePre">
+                    <svg width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="19" height="25" fill="#0E0E0E" />
+                        <path d="M11.5 18L6 12.5L11.5 7" stroke="white" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="section4">
+            <div class="title4">
+                <h2>پروژه های ثنا نور</h2>
+                <a href="/پروژه-ها" title="مشاهده ">مشاهده </a>
+            </div>
+            <div class="projectSection">
+                <basis core="print" datamembername="db.projectList">
+
+                    <face>
+                <div class="projectBox">
+                    
+                    <div class="imgS">
+                        <img src="[##cms.cms.cdn##]/images/m-@id.jpg" alt="@name" title="@title" />
+                    </div>
+                    <div class="projTitle">
+                        <a href="/@link" title="@title">
+
+                            <h3>@title</h3>
+                        </a>
+                    </div>
+                </div>
+                    </face>
+                </basis>
+              
+            </div>
+        </div>
+        <basis core="call" file="footer_mobile.inc" />
+    </div>
+    <script src="[##cms.cms.cdn##]/_js/swiper4.7.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/gsap.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/scrollTrigger.js"></script>
+    <script src="[##cms.cms.cdn##]/js/newHome-mobile.js"></script>
+</body>
+
+</html>

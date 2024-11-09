@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطا</title>
+    <link rel="stylesheet" href="css/newMobileStyle.css">
+    <basis core="call" file="styles_mobile.inc" />
+
+
+</head>
+<body>
+    <div class="errorPage">
+        <basis core="call" file="newHeader-mobile.inc" />
+
+        <div class="backImg">
+            <img src="images/mobile-errorBack.png" alt="error" title="error">
+        </div>
+<div class="errorContainer">
+    <div class="imgS">
+        <img src="images/mobile-error.png" alt="error" title="error">
+    </div>
+    <div class="para">
+        <p>
+            PAGE NOT FOUND
+        </p>
+    </div>
+    <a href="/" title="main page">
+        بازگشت به صفحه نخست 
+    </a>
+</div>
+<basis core="call" file="footer_mobile.inc" />
+
+</div>
+<script src='[##cms.cms.cdn##]/_js/jquery/jquery-3.6.3.min.js'></script>
+
+<script>
+                        
+const menu = document.getElementById("menu_wrapper")
+        body = document.getElementsByTagName('body')[0],
+        menu.style.transform = `translateX(${body.clientWidth}px)`
+        function openMenu(){
+            menu.style.transform = `translateX(0)`
+        }
+        function closeMenu(){
+            menu.style.transform = `translateX(${body.clientWidth}px)`
+        }   
+       
+   
+        
+    const searchBox = document.getElementById("search_wrapper_body")
+        body = document.getElementsByTagName('body')[0],
+        searchBox.style.transform = `translateX(${body.clientWidth}px)`
+        function openSearch(){
+            console.log("sss",searchBox)
+            searchBox.style.transform = `translateX(0)`
+        }
+        function closeSearch(){
+            searchBox.style.transform = `translateX(${body.clientWidth}px)`
+        }   
+
+
+
+</script>
+
+</body>
+</html>

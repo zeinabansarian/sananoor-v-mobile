@@ -1,0 +1,91 @@
+<basis core="dbsource" source="basiscore" mid="19" name="db" lid="1">
+  <member name="projectCat" type="tree" request="cat" parentid="208272" postsql="select * from [db.projectCat] where catid<>208272"/> 
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2355021">
+<member name="project-video" type="list" format="3"/>
+</basis>
+
+  <basis core="inlinesource" name="db">
+      <member  name="plist" lefttblcol="db.project-video.RowNumber" righttblcol="db.projectCat.RowNumber" format="join" jointype="leftjoin" />
+     </basis>
+
+     <basis core="dbsource" source="basiscore" name="db" lid="1" request="seo">
+      <member name="list" type="list" request="product" id="[##cms.query.id##]"></member>
+  </basis>
+  
+  
+  <!DOCTYPE html>
+  <html lang="fa">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="theme-color" content="#000000" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <basis core="print" datamembername="db.list">
+        <face>
+            <title>[##cms.seo.title|db.list.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.list.description##]" />
+        </face>
+    </basis>
+      <link rel="stylesheet" href="[##cms.cms.cdn##]/css/newMobileStyle.css" />
+      <basis core="call" file="styles_mobile.inc" />
+
+    </head>
+    <body>
+      <div class="mobileProjectCat">
+        <basis core="call" file="newHeader-mobile.inc" />
+
+        <div class="proCatContainer">
+          <basis core="print" datamembername="db.plist">
+              <face>
+                  
+                <div class="catBox">
+                  <a href="/@db.projectCat.link" title="@db.projectCat.title" target="_blank">
+                    <div class="inVideo">
+                        <video playsinline loop autoplay muted>
+                            <source src="/@db.project-video.largeIMG">
+                        </video>
+                    </div>
+                    <div class="title">
+                      <h1>@db.projectCat.title</h1>
+                    </div>
+                  </a>
+                </div>
+              </face>
+          </basis>
+         
+        </div>
+        <basis core="call" file="footer_mobile.inc" />
+
+      </div>
+      <script src='[##cms.cms.cdn##]/_js/jquery/jquery-3.6.3.min.js'></script>
+
+      <script>
+                              
+        const menu = document.getElementById("menu_wrapper")
+                body = document.getElementsByTagName('body')[0],
+                menu.style.transform = `translateX(${body.clientWidth}px)`
+                function openMenu(){
+                    menu.style.transform = `translateX(0)`
+                }
+                function closeMenu(){
+                    menu.style.transform = `translateX(${body.clientWidth}px)`
+                }   
+              
+          
+                
+            const searchBox = document.getElementById("search_wrapper_body")
+                body = document.getElementsByTagName('body')[0],
+                searchBox.style.transform = `translateX(${body.clientWidth}px)`
+                function openSearch(){
+                    console.log("sss",searchBox)
+                    searchBox.style.transform = `translateX(0)`
+                }
+                function closeSearch(){
+                    searchBox.style.transform = `translateX(${body.clientWidth}px)`
+                }   
+        
+        
+        
+            </script>
+    </body>
+  </html>
